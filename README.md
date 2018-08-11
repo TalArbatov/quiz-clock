@@ -10,3 +10,4 @@ Tab - opens clock management modal, the tab can be closed with Esc or confirmed 
 
 R - resets the clock
 
+![alt text](https://github.com/TalArbatov/quiz-clock/blob/master/img/screenshot.PNG)
