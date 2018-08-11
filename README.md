@@ -1,7 +1,12 @@
+# quiz-clock
+
+this is not an NPM project, access the clock by opening index.html
+
 # Keyboard shortcuts
 
-Spacebar - Start/stop the clock, in-case the clock is finished, it will reset the clock
+Spacebar - Starts/stops the clock, in-case the clock is finished, it will reset the clock
 
-Tab - open clock management modal, the tab can be closed with Esc or confirmed with Enter
+Tab - opens clock management modal, the tab can be closed with Esc or confirmed with Enter
 
+R - resets the clock
 
