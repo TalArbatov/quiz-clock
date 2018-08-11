@@ -1,0 +1,189 @@
+#activity {
+    float: left;
+    position: relative;
+    margin: 85px 0px -450px 15px;
+    width: 425px;
+    color: #E0F7FA;
+    font-size: 7em;
+    text-align: center;
+    cursor: pointer;
+}
+body {
+    background-image:url('./img/PikudReka.jpg');
+    background-size: 100%;
+    max-width: 100vw;
+    overflow:hidden;
+  
+}
+#break-box {
+    position: absolute;
+    top: 80%;
+    left: 125px;
+}
+#break-slider {
+    position: absolute;
+    left: 125px;
+    top: -5%;
+}
+.btn-group {
+    position: absolute;
+    left: 125px;
+    top: 50%;
+    color: white;
+}
+#circle-base {
+    fill: none;
+    stroke: #212121;
+    stroke-width: 0.196em;
+    stroke-dasharray: 100 100;
+    
+}
+#circle-fill {
+    fill: none;
+    stroke: #11A9AC;
+    stroke-width: 0.16em;
+    stroke-dashoffset: 0;
+    transition: stroke-dasharray 0.1s;
+    
+}
+.container {
+    min-width: 1145px;
+    max-width:100vw;
+    background: red;
+    z-index:2;
+}
+#countdown {
+    float: left;
+    position: relative;
+    margin: 120px 0px -450px 15px;
+    width: 425px;
+    color: #E0F7FA;
+    font-size: 8.5em;
+    text-align: center;
+    font-family: 'Nova Mono', Monospace;
+    cursor: pointer;
+    text-shadow: 5px 0 0 #000, 0 -5px 0 #000, 0 5px 0 #000, -5px 0 0 #000;
+
+}
+#main {
+    float: left;
+    position: absolute;
+    width: 450px;
+    left: 50%;
+    top: 10%;
+    margin-left: -240px;
+    
+}
+.slider {
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    margin-top: 600px;
+    height: 10px;
+    width: 370px;
+    background: #212121;
+    border-color: #212121;
+}
+.slider .ui-widget-header {
+    background-image: none;
+    background-color: #11A9AC;
+}
+.slider .ui-slider-handle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #11A9AC;
+    border-color: #212121;
+}
+#timer {
+    z-index:100;
+    float: left;
+    height: 900px;
+    width: 950px;
+    margin-top: -225px;
+    margin-left: -250px;
+    border-radius: 50%;
+    transition: stroke-dasharray 0.1s;
+    transform: rotate(-90deg);
+    
+}
+.time-box {
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    color: #E0F7FA;
+    background: #212121;
+    border-color: #212121;
+    border-radius: 5%;
+}
+#work-box {
+    position: absolute;
+    top: 72%;
+    left: 125px;
+}
+#work-slider {
+    position: absolute;
+    left: 125px;
+    top: -13%;
+}
+
+
+img {
+    width:200px;
+    height:200px;
+}
+
+
+#symbols, #symbols > *  {
+    z-index:1;
+    display: inline-block;
+    position: absolute;
+    right:10%;
+    background:repeating-linear-gradient(to left,#5c7cd4,white,#5c7cd4);
+    box-shadow: rgba(0,0,0,0.4) 15px 15px 15px;
+}
+
+.slick-slide {
+    margin:10px 15px;
+}
+
+.modal {
+    direction:rtl;
+}
+.modal-header button {
+    margin-left:0 !important;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+#wrapper > * {
+    display: inline-block;
+    text-align: center;
+    padding:0 10px;
+}
+#wrapper input {
+    max-width:70px !important;
+}
+#wrapper > p {
+    font-size:35px;
+}
+/* #wrapper > div {
+    flex-basis: 30%;
+}
+#wrapper > table {
+    flex-basis: 20%;
+} */
+
+
+svg, circle {
+    z-index:100;
+}
