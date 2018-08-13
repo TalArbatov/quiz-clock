@@ -25,8 +25,14 @@ $(document).ready(function() {
   //set the default times display in minutes
   $("#work-box").text("Work: " + workTime / 60 + " min");
   //$('#break-box').text("Break: " + (breakTime / 60) + " min");
-  $("#countdown").text(minutes + ":" + ("0" + Math.floor(seconds)).slice(-2));
-
+  if (minutes < 10)
+  $("#countdown").text(
+    "0" + minutes + ":" + ("0" + Math.floor(seconds)).slice(-2)
+  );
+else
+  $("#countdown").text(
+    minutes + ":" + ("0" + Math.floor(seconds)).slice(-2)
+  );
   //This function controls the clock display and ticking
   function countDown(num) {
     seconds -= num;
@@ -45,7 +51,14 @@ $(document).ready(function() {
       minutes = 0;
     }
     //change the countdown text
-    $("#countdown").text(minutes + ":" + ("0" + Math.floor(seconds)).slice(-2));
+    if (minutes < 10)
+      $("#countdown").text(
+        "0" + minutes + ":" + ("0" + Math.floor(seconds)).slice(-2)
+      );
+    else
+      $("#countdown").text(
+        minutes + ":" + ("0" + Math.floor(seconds)).slice(-2)
+      );
   }
 
   //This is the primary timing function that is called in setInterval()
@@ -60,7 +73,7 @@ $(document).ready(function() {
         .getElementById("circle-fill")
         .setAttributeNS(null, "stroke-dasharray", line + " 100");
       //
- 
+
       //console.log("workTime: " + workTime);
       const currentLeft = minutes * 60 + Math.floor(seconds);
       //console.log("currentLeft: " + currentLeft);
@@ -102,8 +115,7 @@ $(document).ready(function() {
           workDing.pause();
         }, 2000);
       }
-      $("#countdown").text("נגמר הזמן");
-      $("#countdown").css("font-size", "6em");
+      $("#countdown").text("00:00");
       //If this is the first iteration for break, play the break ding and set sliders, countdown, etc
       if (onBreak === false) {
         $("#break-slider").slider("disable");
@@ -125,10 +137,8 @@ $(document).ready(function() {
     pause();
   });
 
- 
-
   function start() {
-    console.log('starting.....')
+    console.log("starting.....");
     dingPlayed = false;
     if (!running) {
       $("#circle-fill").css("transition", "stroke-dasharray 0.1s");
@@ -145,8 +155,6 @@ $(document).ready(function() {
     $("#activity").addClass("animated rubberBand");
   }
 
- 
-
   $("#reset-button").click(function() {
     isFinished = false;
     calcTime();
@@ -156,7 +164,14 @@ $(document).ready(function() {
     line = 0;
     //minutes = workTime/60;
     //seconds = 0;
-    $("#countdown").text(minutes + ":" + ("0" + Math.floor(seconds)).slice(-2));
+    if (minutes < 10)
+      $("#countdown").text(
+        "0" + minutes + ":" + ("0" + Math.floor(seconds)).slice(-2)
+      );
+    else
+      $("#countdown").text(
+        minutes + ":" + ("0" + Math.floor(seconds)).slice(-2)
+      );
     $("#activity").text("");
     $("#activity").removeClass("animated rubberBand");
     $("#work-slider").slider("enable");
@@ -186,7 +201,7 @@ $(document).ready(function() {
       $("#work-box").text("Work: " + ui.value + " min");
     }
   });
-  
+
   document.body.onkeyup = function(e) {
     //if user presses enter, clock will start/stop, if clock is finished, it will reset
     if (e.keyCode == 32) {
@@ -201,22 +216,18 @@ $(document).ready(function() {
       }
       //if user presses Tab, model will toggle
     } else if (e.keyCode == 9) {
-      if(modalShown)
-        $("#timerModal").modal("hide");
-      else
-        $("#timerModal").modal('show');
+      if (modalShown) $("#timerModal").modal("hide");
+      else $("#timerModal").modal("show");
       modalShown = !modalShown;
     }
     //if user presses R, clock will reset
     else if (e.keyCode == 82) {
       reset();
-    }
-    else if(e.keyCode == 13) {
-      if(modalShown) {
+    } else if (e.keyCode == 13) {
+      if (modalShown) {
         changeTime();
-        modalShown = false;        
+        modalShown = false;
       }
-        
     }
   };
 
@@ -229,8 +240,8 @@ $(document).ready(function() {
     cssEase: "linear",
     infinite: true,
     speed: 1600,
-    arrows:false,
-    pauseOnFocus: false,
+    arrows: false,
+    pauseOnFocus: false
   });
 });
 
@@ -244,7 +255,6 @@ let filtered = false;
 
 //when clicking SAVE on the CHANGE TIME modal
 
-
 function calcTime() {
   let time = workTime;
   minutes = 0;
@@ -253,10 +263,15 @@ function calcTime() {
     time -= 60;
   }
   seconds = time;
-  $("#countdown").text(minutes + ":" + ("0" + Math.floor(seconds)).slice(-2));
+  if (minutes < 10)
+    $("#countdown").text(
+      "0" + minutes + ":" + ("0" + Math.floor(seconds)).slice(-2)
+    );
+  else
+    $("#countdown").text(minutes + ":" + ("0" + Math.floor(seconds)).slice(-2));
 }
 function pause() {
-  console.log('pausing.....')
+  console.log("pausing.....");
   running = false;
   clearInterval(timerID);
   $("#activity").removeClass("animated rubberBand");
@@ -275,7 +290,6 @@ function changeTime() {
   $("#timerModal").modal("hide");
 }
 
-
 function reset() {
   pause();
 
@@ -284,7 +298,12 @@ function reset() {
   running = false;
   clearInterval(timerID);
   line = 0;
-  $("#countdown").text(minutes + ":" + ("0" + Math.floor(seconds)).slice(-2));
+  if (minutes < 10)
+    $("#countdown").text(
+      "0" + minutes + ":" + ("0" + Math.floor(seconds)).slice(-2)
+    );
+  else
+    $("#countdown").text(minutes + ":" + ("0" + Math.floor(seconds)).slice(-2));
   $("#activity").text("");
   $("#activity").removeClass("animated rubberBand");
   $("#work-slider").slider("enable");

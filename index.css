@@ -55,10 +55,10 @@ body {
 #countdown {
     float: left;
     position: relative;
-    margin: 120px 0px -450px 15px;
+    margin: 140px 0px -470px -40px;
     width: 425px;
     color: #E0F7FA;
-    font-size: 8.5em;
+    font-size: 11em;
     text-align: center;
     font-family: 'Nova Mono', Monospace;
     cursor: pointer;
@@ -186,4 +186,15 @@ img {
 
 svg, circle {
     z-index:100;
+}
+#timer {
+    height:82vw;
+    width:82vw;
+    margin-top: -22%;
+    margin-left:-28%;
+}
+
+html, body, #container, #main {
+    height:100vh;
+    width:100vw;
 }
